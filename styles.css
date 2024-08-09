@@ -1,0 +1,261 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-bg-color: #6a0dad;
+    --button-bg-color: #ff7b00;
+    --button-hover-color: #e66700;
+    --download-button-bg-color: #6a0dad;
+    --download-button-hover-color: #4b0082;
+    --section-bg-color: #f9f9f9;
+    --alternate-section-bg-color: #ececec;
+    --footer-bg-color: #6a0dad;
+    --footer-text-color: #ffffff;
+    --link-color: #6a0dad;
+    --hero-text-color: #333333; /* Hero section yazı rengi (açık tema) */
+    --social-icon-color: #333333; /* Açık tema için sosyal medya ikon rengi */
+}
+
+.dark-theme {
+    --background-color: #2c2c2c;
+    --text-color: #f9f9f9;
+    --header-bg-color: #4b0082;
+    --button-bg-color: #f39c12;
+    --button-hover-color: #d87d00;
+    --section-bg-color: #3c3c3c;
+    --alternate-section-bg-color: #2c2c2c;
+    --footer-bg-color: #1a1a1a;
+    --footer-text-color: #999999;
+    --link-color: #8a2be2;
+    --hero-text-color: #ffffff; /* Hero section yazı rengi (koyu tema) */
+    --social-icon-color: #f9f9f9; /* Koyu tema için sosyal medya ikon rengi */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--footer-text-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header .logo-container {
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-around;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--link-color);
+}
+
+.theme-button {
+    background-color: var(--button-bg-color);
+    color: var(--footer-text-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+}
+
+.section {
+    padding: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: var(--section-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: var(--hero-text-color);
+    padding: 5rem 0;
+    position: relative;
+    margin-top: 60px; /* header ile çakışmaması için */
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section::before {
+    content: "";
+    background: url('https://preview.redd.it/here-are-some-wallpapaer-i-made-fell-free-to-share-ideas-of-v0-7buzb5xztqhb1.png?width=640&crop=smart&auto=webp&s=58a2f1d72fb5cd016d68e74bcb6b2c35b95bb000') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3; /* Görüntünün görünürlüğünü ayarlar */
+}
+
+.hero-button {
+    margin-top: 1.5rem;
+    color: var(--hero-text-color);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--download-button-bg-color); /* İndirme butonu rengi */
+    color: var(--footer-text-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--download-button-hover-color); /* İndirme butonu hover rengi */
+    transform: scale(1.05);
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.social-media li {
+    margin: 0;
+}
+
+.social-media a {
+    color: var(--social-icon-color); /* İkon rengi */
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--link-color);
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
